@@ -1,0 +1,30 @@
+# Getting configurations for encryption
+# Go to macports.org and derive passwd document from there, they can also be found at ./Macintosh\ HD/etc/passwd
+# you just type nano before you type paswwd and then see what's useful for you
+#
+# Obtaining an 802.11 Wifi router capable for WPA2 Encryption: go to https://www.wi-fi.org/discover-wi-fi/specifications
+# and select IBSS with Wi-Fi Protected Setup Technical Specification v1.0.0, fill the form with your profile info and
+# the real country where you are and download it
+#
+# Download dash for mac at https://kapeli.com/dash
+# Download Source codes for windows at https://zealdocs.org
+#
+# Derive 2 networks to test an attacker and to test a victim, that can be done with a guide to p2p in Zeal or in Dash
+# Download Android on zeal or dash
+# download Linux
+# i mean download all the documents that way you just have to select what you need once
+# without having to make a new download every time.
+# keep a record of all the Android matches for storage and study them to find the one that better matches
+# the concept of shared storage.
+# do the same to see the online and offline status of Android and what app does check inline offline status
+# check the ruby rails http login forms and see if they can be imported, if you can call ruby on rails from perl
+# or add a new document in ruby that handles http login forms and then invoke that file from the perl script.
+# ruby document handling the router and a switch to the Android administration credentials.
+# open a thread with comments suggestions or whatever you wanted to say.
+# in case you have no space in your bag make sure you Download Windows Framework
+# i use a framework to Linux that covers almost any flavor or any kernel but you can use the one you like the most
+# make sure you have php to handle http
+# make sure you have Oracle MySQL
+# There is a notion of abstraction on the equipment being designed here but if you like different names
+# you can design your own this code, it's ok to me if you use the names i give to things or if you use this
+# for your own purpose.
