@@ -61,6 +61,30 @@ while (1) {
 }
 
 
+usr=passwd      # user authentication
+for usr in $(awk 'BEGIN{FS=":"}{print $passwd}' < "$passwd-pod.sh")     # print first field and get input from password file
+
+do
+        echo "USER #$usr = $passwd"
+        let "user += passwd"
+done
+
+# you must include roots, bins, and daemons, and because you included Laura Bozo you will always have a great deal of power
+# no, real, you have to include many types of authentication to obtain different input to different port trees, i mean
+# we don't think outside microsoft and swift because we have homebrew for the missing windows and macports for the whales that
+# wanna swim deeper, but there are tons of port trees waiting for you to contribute with your .pod files,
+# that said just don't subject yourself to a vote, instead have many ways to get information in.
+
+
+# USER #1 = root
+# USER #2 = bin
+# USER #3 = daemon
+# ...
+# USER #911 = Laura_Bozo
+
+
+
+
 
 # Obtaining an 802.11 Wifi router capable for WPA2 Encryption: go to https://www.wi-fi.org/discover-wi-fi/specifications
 # and select IBSS with Wi-Fi Protected Setup Technical Specification v1.0.0, fill the form with your profile info and
