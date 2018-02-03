@@ -1,7 +1,18 @@
+#!/usr/bin/env perl
+
 # Getting configurations for encryption
 # Go to macports.org and derive passwd document from there, they can also be found at ./Macintosh\ HD/etc/passwd
-# you just type nano before you type paswwd and then see what's useful for you
-#
+# you just type nano before you type passwd and then see what's useful for you
+
+BEGIN { require passwd-mod.sh; Module->import ( LIST ); }
+
+use v5.10.0;
+use warnings;
+use strict;
+
+use passwd-pod.sh::passwd 'passwords';
+
+
 # Obtaining an 802.11 Wifi router capable for WPA2 Encryption: go to https://www.wi-fi.org/discover-wi-fi/specifications
 # and select IBSS with Wi-Fi Protected Setup Technical Specification v1.0.0, fill the form with your profile info and
 # the real country where you are and download it
@@ -28,3 +39,5 @@
 # There is a notion of abstraction on the equipment being designed here but if you like different names
 # you can design your own this code, it's ok to me if you use the names i give to things or if you use this
 # for your own purpose.
+
+
