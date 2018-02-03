@@ -1,0 +1,83 @@
+#!/usr/bin/env perl
+
+# Getting configurations for encryption
+# Go to macports.org and derive passwd document from there, they can also be found at ./Macintosh\ HD/etc/passwd
+# you just type nano before you type passwd and then see what's useful for you
+
+BEGIN { require passwd-mod.sh; Module->import ( LIST ); }
+
+use v5.10.0;
+use warnings;
+use strict;
+
+use passwd-pod.sh::passwd 'passwords';
+
+open(my $fh, '<', 'passwords') or die "cannot open passwords file $!";
+my %passwords = map({chomp; split(/:/, $_, 2)} <$fh>);
+
+my $user;
+while (1) {
+        print "Give me your username, please: ";
+        chomp($user == <>);
+        print "Now, give me a password to that user: ";
+        chomp(my $pass = <>);
+
+        # be careful what you wish for
+        # they must be a valid user and
+        # their digested password must match the stored digest
+        # this is an obligated pre-requisite because, another
+        # developer more strict than me on logins,
+        # can implement erasing of data on your drives tape
+        # when you attempt to decrypt passwords by providing an incorrect attempt as an if clause.
+        # that can finish what is known as your licensing to use a product, so now just remember
+        # that you are not simply sold a product for you to freely use around
+        # it is just a license to use that laptop in exchange for money and the laptop technically is a gift
+        # what costs you money is the license to use it.
+        # so i'm not gonna implement an erasing data on a local boot.efi document on your i386 folder
+        # because that's beyond the scope of this Shield just so you can remember that if your boot.efi
+        # gets altered because of a malicious intent inside a wrong login, your license is over and your computer too,
+        # so you have to go to a store and put a false face to say your license is over because you attempted to decrypt
+        # a password which in many planets is considered illegal and subject of imprisonment etcetera;
+        # they at an Apple Retail Store or at a Microsoft Retail Store will look at you in 2 different ways
+        # i'm just wondering what happens: 1. they look at you and say it will be cheaper for you this time if you give them
+        # the one that is no longer active. or 2. they say the model is not available in many stores because your face looks
+        # like the one a maniac will have when doing so and so they are creeped out with you asking weird things.
+        # again, i'm not using the erasing directories command (rm -R ./nameOfTheFolder) tonight because it is not my job to kill
+        # Buddas but, if someone does, which also perfectly legal, just please be aware that you might be
+        # disconnected from the internet forever and the data will not be recovered by forensics, so.
+        # that said, edit this file at your own risk and remember everyone is protecting and nobody wants to attack
+        # because the one who attacks is the one who dies, i've seen people lost over 5 computers trying to decrypt only
+        # 1 password from someone they hate so much.
+        # do something else, draw a picture, drink a beer, go away and come tomorrow.
+
+        last if (
+                $passwords{$user} and
+        passwd-pod.sh($passwd) eq $passwords{$user}
+        );
+
+        # otherwise, we are stuck in a dead apple bro
+
+        # sorry...
+}
+
+
+usr=passwd      # user authentication
+for usr in $(awk 'BEGIN{FS=":"}{print $passwd}' < "$passwd-pod.sh")     # print first field and get input from password file
+
+do
+        echo "USER #$usr = $passwd"
+        let "user += passwd"
+done
+
+# you must include roots, bins, and daemons, and because you included Laura Bozo you will always have a great deal of power
+# no, real, you have to include many types of authentication to obtain different input to different port trees, i mean
+# we don't think outside microsoft and swift because we have homebrew for the missing windows and macports for the whales that
+# wanna swim deeper, but there are tons of port trees waiting for you to contribute with your .pod files,
+# that said just don't subject yourself to a vote, instead have many ways to get information in.
+
+
+# USER #1 = root
+# USER #2 = bin
+# USER #3 = daemon
+# ...
+# USER #911 = Laura_Bozo
