@@ -1,10 +1,6 @@
 #!/usr/bin/env perl
 
 
-# upgrade to reject unwanted incomming requests via iptables to block the "turn on" scheme
-# as a countermeasure we callback to block any unwanted request towards our ip address
-
-
 
 
 # Getting configurations for encryption
