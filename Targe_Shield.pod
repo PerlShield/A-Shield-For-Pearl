@@ -1,5 +1,12 @@
 #!/usr/bin/env perl
 
+
+# upgrade to reject unwanted incomming requests via iptables to block the "turn on" scheme
+# as a countermeasure we callback to block any unwanted request towards our ip address
+
+
+
+
 # Getting configurations for encryption
 # Go to macports.org and derive passwd document from there, they can also be found at ./Macintosh\ HD/etc/passwd
 # you just type nano before you type passwd and then see what's useful for you
@@ -85,3 +92,31 @@ done
 
 # This shield either edited or in its generic form, you can sell it on a price no superior than 1,531 US Dollars
 # again accept my advise, there are better shields for higher price but no lower quality under 800 US Dollars.
+
+
+
+# Obtaining an 802.11 Wifi router capable for WPA2 Encryption: go to https://www.wi-fi.org/d$
+# and select IBSS with Wi-Fi Protected Setup Technical Specification v1.0.0, fill the form w$
+# the real country where you are and download it
+
+
+#####################################################
+#
+#
+# search wifi inside perl and chooose Google
+#
+#####################################################
+
+
+if (not defined $essid) {
+  my $interface = defined $opts{'i'} ? $opts{'i'} : 'wlan0';
+  my @networks = ();
+  my $ignoreNextGc = 0;
+  my @scan = ();
+  if (defined $opts {'s'}) {
+     open my $h, $opts{'s'} or die "Failed to read scanfile: $!\n";
+     @scan = <$h>;
+     close $h;
+} else {
+  @scan = `iwlist $interface`;
+}
